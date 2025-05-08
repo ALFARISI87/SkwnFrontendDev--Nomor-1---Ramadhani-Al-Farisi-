@@ -1,0 +1,140 @@
+
+/* Import font Montserrat lagi dari Google Fonts, biar dipakai di CSS ini */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Definisi warna-warna utama yang bisa dipakai berulang di CSS */
+:root {
+  --primary: #d9f99d;
+  --dark: #222;
+  --light: #f8f8f8;
+}
+
+/* Reset semua element HTML biar mulai dari nol, nggak warisan dari browser */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style dasar buat body halaman: font, warna, dan background */
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  background-color: var(--light);
+  overflow-x: hidden;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animasi 'pulse', bikin elemen ngedup-dempet kayak denyut nadi */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Ini class buat efek muncul dari bawah pas scroll */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+/* Kalau udah keliatan di layar, ilangin transisinya biar diem di tempat */
+.scroll-reveal.reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+/* Delay transisi 0.1 detik, cocok buat kasih jeda animasi */
+.delay-100 { transition-delay: 0.1s; }
+/* Delay transisi 0.2 detik */
+.delay-200 { transition-delay: 0.2s; }
+/* Delay transisi 0.3 detik */
+.delay-300 { transition-delay: 0.3s; }
+/* Delay transisi 0.4 detik */
+.delay-400 { transition-delay: 0.4s; }
+/* Delay transisi 0.5 detik */
+.delay-500 { transition-delay: 0.5s; }
+/* Delay transisi 0.6 detik */
+.delay-600 { transition-delay: 0.6s; }
+/* Delay transisi 0.7 detik */
+.delay-700 { transition-delay: 0.7s; }
+
+/* Bikin bentuk background aneh pake clip-path, keren buat section */
+.clip-path-polygon {
+  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+}
+
+/* Bikin scroll horizontal kayak slide yang nyangkut di tempat */
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+/* Setiap item bakal snap ke posisi awal saat scroll */
+.scroll-snap-align-start {
+  scroll-snap-align: start;
+}
+
+/* Hide scrollbar but allow scrolling */
+/* Ngilangin scrollbar tapi scroll-nya masih bisa */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom animation classes */
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease forwards;
+}
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.8s ease forwards;
+}
+.animate-fadeInRight {
+  animation: fadeInRight 0.8s ease forwards;
+}
+.animation-delay-0 { animation-delay: 0s; }
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-600 { animation-delay: 0.6s; }
+.animation-delay-800 { animation-delay: 0.8s; }
+.animation-delay-1000 { animation-delay: 1s; }
